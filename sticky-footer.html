@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sticky Footer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <style type="text/css">
+      *,
+      *:after,
+      *:before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font: normal 16px sans-serif;
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      p {
+        padding: 0.5em;
+      }
+      .content {
+        flex: 1 0 auto;
+        padding: 2em;
+      }
+      .footer {
+        flex-shrink: 0;
+        padding: 1em;
+        background: #424242;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Flexbox Demo</h1>
+      <p>
+        This example demonstrates sticky footers with flexbox.
+      </p>
+      <p>
+        Footer will sit at the bottom of the page. As the content expands, footer will move.
+      </p>
+      <p>
+        <button id="more">More</button>
+      </p>
+    </div>
+    <footer class="footer">
+      Footer
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $("#more").on("click", function () {
+        $("<p>Additinal paragraph content</p><p>Second paragraph</p>").appendTo(".content");
+      });
+    </script>
+  </body>
+</html>
